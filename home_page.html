@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link  rel='stylesheet' href='style.css'>
+    <title>levels</title>
+</head>
+<body id='body-level'>
+    <div id='div-level'>
+        <img id='img-level' src='images/2048.png' alt='2048'>
+        <button class='btn-level' value='512' id='btn-level-esey' style='background: linear-gradient(to right, #8b1c9c, #b00084);'> EASY</button>    
+        <button class='btn-level' value='2048' id='btn-level-classic' style='background: linear-gradient(to right, #00d9b5, #00b3aa);'> CLASSIC</button>    
+        <button class='btn-level' value='8192' id='btn-level-hard' style='background: linear-gradient(to right, #ff5100, #ffb700);'>HARD</button> 
+        <button class='btn-level' value='512' id='btn-level-tatorial' style='background: linear-gradient(to right,#ff007b, #ff009d);'>HOW TO PLAY </button>    
+    </div>
+    <div id='how-to-play-div'>
+        <h3>How to play:</h3>
+        <p id='how-to-play-p'>
+            2048 is a game in which tiles with numbers appear on the board. 
+            Use the keyboard arrows to move the tiles around the board. 
+            Pressing Up will move all tiles upwards.
+            Pressing Right will move all tiles to the right side of the board, and so on.
+            Each time you make a move, a new tile will appear.
+    
+            The aim of the game is to make tiles with the same value bump into one another.
+            When two tiles with the same value collide, they merge into a single tile with double the value.
+            So if two tiles with the value of “2” collide, they turn into a single tile with the value of 4.
+            If two tiles with the value of 4 collide, they merge into a single tile with the value of 8, and so on.
+            You win when you manage to create one tile with the value of 2048. Good luck!
+        </p>
+        <button id="beck">➡️</button>
+    </div>
+    <script>
+        document.getElementById('btn-level-tatorial').addEventListener('click',Show);
+        document.getElementById('btn-level-esey').addEventListener('click',Level);
+        document.getElementById('btn-level-classic').addEventListener('click',Level);
+        document.getElementById('btn-level-hard').addEventListener('click',Level);
+        document.getElementById('beck').addEventListener('click',UnShow);
+        let win;
+        setInterval(runEffectSequence, 7000);
+
+        function Level(e){
+            localStorage.setItem('LEVEL', e.target.value);
+            window.location.href = '2048.html';
+        }
+
+        function Show(){
+            document.getElementById('how-to-play-div').style.right = '0px';
+        }
+
+        function UnShow(){
+            document.getElementById('how-to-play-div').style.right = '-400px';
+        }
+        
+        let buttonsArr = document.querySelectorAll('button');
+
+        function runEffectSequence() {
+          for (let i = 0; i < buttonsArr.length; i++) {
+            setTimeout(() => {
+               buttonsArr[i].classList.add('effect');
+              setTimeout(() => {
+                 buttonsArr[i].classList.remove('effect');
+              },150);
+            }, i * 150);
+          }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.888);
+  font-family: Arial, sans-serif;
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div,button{
+    border-radius: 10px;
+    text-align: center;
+}
+h3{
+    margin: 5px;
+    text-align: center;
+}
+button,#body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.divmenu{
+    display: block;
+}
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#menu{
+    height: 530px;
+    display: grid;
+    grid-template-rows: 2fr 4fr;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 2.4vmin;
+    margin: 10px;
+}
+#div_menu{
+    display: grid;
+    grid-template-rows: 0.9fr 0.9fr 1fr 1fr;
+    gap: 15px;
+}
+#name{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(to right, #ff007b, #d6006f);
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 2px #000;
+}
+.score,.btn_option{
+    flex-direction: column;
+    display: inline-block;
+}
+.btn-level,.btn_option,.score{
+    width: 100%;
+    color: white;
+    border-radius: 20px;
+    font-size: 30px;
+    border: transparent ,solid,0px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  box-shadow: 0 2px 4px rgba(199, 199, 199, 0.7);
+  transform: scale(0.98);
+}
+#besttxt,#scoretxt{
+    font-weight: bold;
+    margin: 7px;
+}
+#tutorial{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 2vh;
+}
+
+#Game_board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2vmin;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+#game,#Game_board,#gameOver,#div_opacity{
+    width: 550px;
+    height: 550px;
+    padding: 2.4vmin;
+}
+
+.grid_cell,.new_card {
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.new_card{
+    height:100%;
+    width: 100%;
+}
+#gameOver,#div_opacity{
+    position: absolute;
+    z-index: 100;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 40px;
+    visibility: collapse;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#div_opacity{
+    background-color: gray;
+    opacity: 0.5;
+}
+#gameOver{
+    background-color: transparent;
+    border: #00b3aa 3px solid;
+}
+
+/*level page*/
+#body-level{
+    display: flex;
+    flex-direction: row;
+}
+.btn-level{
+    margin: 1.5vmax auto; 
+    padding: 20px 0;
+    width: 33%;
+}
+button.effect {
+  transform: scale(1.1);
+}
+#div-level{
+    width: 100%;
+}
+#img-level{
+    margin: 2vw;
+}
+#how-to-play-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: -800px;
+    direction: rtl;  
+    background-color: #000;
+    opacity: 0.7;
+    width: 300px;
+    height: 100%;
+    transition: right 0.9s ease;
+}
+#how-to-play-p{
+    padding: 0px 15px;
+    white-space: pre-wrap;
+}
+#beck{
+    font-size: 30px;
+    width: 30px;
+    height: 10px;
+
+}
+#Try_again{
+    background-color: black;
+    padding: 10px;
+    width: 50%;
+}
+
+.animation_newCard{
+    animation-name: new;
+    animation-duration: 0.2s;
+}
+    @keyframes new {
+      0%   { transform: scale(0.7); }
+      100% { transform: scale(1); }
+    }
+
+.animation_replace{ 
+    animation-name: replace;
+    animation-duration: 0.4s;
+}
+    @keyframes replace {
+      0%   { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+@media screen and (max-width: 1000px) {
+    #menu{
+        height: auto;
+        width: 92vw;
+        margin: 10px auto;
+    }
+    #tutorial{
+    font-size: 4vw;
+    }
+    #body{
+        flex-direction: column; 
+    }
+    #button{
+        display: flex;
+        flex-direction: column;
+    }
+    .divmenu,button,#menu{
+        display: flex;
+        justify-content: center;
+    }
+    .score,.btn_option{
+        font-size: 5vw;
+    }
+    #name{
+        font-size: 10vw;
+        width: 30%;
+    }
+    #game{
+        margin: auto;
+    }
+    #game,#Game_board,#gameOver,#div_opacity{
+    width: 92vw;
+    height: 92vw;
+    padding: 2.4vmin;
+    }
+    #div_menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 60%;
+    }
+    #img-level{
+        width: 90%;
+        margin: 30px auto;
+    }
+    .btn-level{
+        margin: 25px auto;
+        width: 80%;
+    }
+    #game, #Game_board, #gameOver, #div_opacity {
+    width: 92vw;
+    height: 92vw;
+    padding: 2.4vmin;
+    }
+    .grid_cell, .new_card {
+        font-size: 7vw;
+    }
+}
+

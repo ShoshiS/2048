@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <link rel='icon' type='image/png' href='images/logo.png' />
+    <link rel='stylesheet' href='style.css'>
+    <title>2048</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+</head>
+<body >
+  
+<p id='tutorial'>Join the numbers and get to the <a id="level"></a> tile!</p>
+<div id='body'>
+  <div id='menu'>
+    <div id='name'>2048</div>
+    <div id='div_menu'>
+      <button class='btn_option' id='new_geme' style='background: linear-gradient(to right, #ff5100, #ffb700);'>NEW</button>
+      <button class='btn_option' id='exit' style='background: linear-gradient(to right, #00d9b5, #1DA1F2);'>EXIT</button>
+      <div class='score' id='SCORE' style='   background-color: transparent;'> SCORE
+        <p id='scoretxt'>0</p>
+      </div>
+      <div class='score' id='BEST' style=' background-color: transparent;'> BEST
+        <p id='besttxt'>2</p>
+      </div>
+    </div>
+  </div>
+    <div id='game'>
+      <div id='div_opacity'></div>
+      <div id='gameOver'>GAME OVER!
+        <button class='btn_option' id='Try_again'>Try again</button>
+      </div>
+      <div id='Game_board'> 
+      </div>
+   </div>
+</div>
+    <script src='script.js'></script>
+</body>
+</html>
